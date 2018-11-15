@@ -2,7 +2,7 @@ var app = require("express")();
 var bodyParser = require("body-parser");
 var routes = require("./routes/routes.js");
 var http = require('http').Server(app);
-// var io = require('socket.io')(http);
+var io = require('socket.io')(http);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -11,10 +11,13 @@ app.use(bodyParser.urlencoded({
 
 routes(app);
 
-// io.on('connection', function(socket){
-//     console.log("a user connected");
-// });
-
 http.listen(3000, function () {
-    console.log("Server running at http://localhost:3000");
+    console.log("Server running at http://localhost:3000 ...");
+});
+
+io.on('connection', function(socket){
+    socket.on('good update', (msg) => {
+        console.log(msg);
+        io.emit('update', msg);
+    })
 });

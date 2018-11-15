@@ -33,4 +33,4 @@ Your task is to build an Express.js server that uses the socket.io library for c
 - [ ] Add info about Socket server/clients to README
 - [ ] Create test suite for Socket server
 - [ ] Create test suite for Socket clients
-- [ ] Hook up Socket.io
+- [x] Hook up Socket.io
