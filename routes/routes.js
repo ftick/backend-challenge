@@ -46,6 +46,14 @@ var router = function (app) {
             }
         });
     });
+
+    app.get('/api/find/', (req, res) => {
+        res.status(400).send({ message: 'Usage: /api/find/{key}' });
+    })
+
+    app.get('/api/find', (req, res) => {
+        res.status(400).send({ message: 'Usage: /api/find/{key}' });
+    })
 }
 
 module.exports = router;
