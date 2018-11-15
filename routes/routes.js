@@ -24,7 +24,7 @@ var router = function (app) {
         });
     });
 
-    app.post("/data/update", (req, res) => {
+    app.post("/api/update", (req, res) => {
         var text = JSON.stringify(req.body, null, '\t');
         if (text) {
             fs.writeFile(DIR + '/data.txt', text, (err) => {
@@ -38,7 +38,7 @@ var router = function (app) {
         }
     });
 
-    app.get("/data/find/:key", (req, res) => {
+    app.get("/api/find/:key", (req, res) => {
         var key = req.params.key;
         readData((data) => {
             json = JSON.parse(data);
