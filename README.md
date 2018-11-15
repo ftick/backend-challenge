@@ -25,7 +25,7 @@ Your task is to build an Express.js server that uses the socket.io library for c
 ### /data/:key GET endpoint
 - [ ] Write how-to and add to README
 - [ ] Create test suite for endpoint
-- [ ] Implement functionality
+- [x] Implement functionality
 - [ ] Implement input validation
 - [ ] Implement proper error handling
 
