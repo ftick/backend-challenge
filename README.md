@@ -13,18 +13,21 @@ Your task is to build an Express.js server that uses the socket.io library for c
 ## Socket.io
 - Server updates all clients listening on the 'update' channel whenever someone adds data to the JSON file. The message includes the new data.
 
+## Testing
+Done via [Postman](https://www.getpostman.com/collections/e5f661fbfefa0735e2f9)
+
 ## TODO
 
 ### /api/update
 - [ ] Write how-to and add to README
-- [ ] Create test suite for endpoint
+- [x] Create test suite for endpoint
 - [x] <s>Implement functionality</s>
 - [x] <s>Implement input validation</s>
 - [x] <s>Implement proper error handling</s>
 
 ### /api/:key
 - [ ] Write how-to and add to README
-- [ ] Create test suite for endpoint
+- [x] Create test suite for endpoint
 - [x] <s>Implement functionality</s>
 - [x] <s>Implement input validation</s>
 - [x] <s>Implement proper error handling</s>
