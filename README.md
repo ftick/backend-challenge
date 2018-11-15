@@ -4,9 +4,9 @@ Your task is to build an Express.js server that uses the socket.io library for c
 ## Info
 
 ## Endpoints
-- /data/update
+- /api/update
     - Updates server's data.txt file with contents of the request's JSON payload. The resulting file must be valid JSON.
-- /data/:key
+- /api/:key
     - Returns the value associated with the given key from JSON file.
     - Returns an appropriate error if it does not exist.
 
