@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({
 routes(app);
 
 http.listen(3000, function () {
-    console.log("Server running at http://localhost:3000");
+    console.log("Server running at http://localhost:3000 ...");
 });
 
 io.on('connection', function(socket){
