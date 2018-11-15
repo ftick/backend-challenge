@@ -7,10 +7,11 @@ Your task is to build an Express.js server that uses the socket.io library for c
 - /data/update
     - Updates server's data.txt file with contents of the request's JSON payload. The resulting file must be valid JSON.
 - /data/:key
-    - Return value associated with given key from JSON file. If it does not exist return an appropriate error.
+    - Returns the value associated with the given key from JSON file.
+    - Returns an appropriate error if it does not exist.
 
 ## Socket.io
-- Server updates all clients listening on the 'update' channel whenever someone adds data to the JSON file. The message should include the new data
+- Server updates all clients listening on the 'update' channel whenever someone adds data to the JSON file. The message includes the new data.
 
 ## TODO
 
