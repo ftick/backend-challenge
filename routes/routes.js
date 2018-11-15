@@ -1,12 +1,12 @@
-var fs = require('fs');
 const io = require('socket.io-client');
+const DIR_PATH = __dirname.split('\\').slice(0, -1).join('\\') + '\\';
+
+var fs = require('fs');
 
 var router = function (app) {
 
-    var DIR = __dirname.split('\\').slice(0, -1).join('\\');
-
     function readData(cb) {
-        fs.readFile(DIR + '/data.txt', 'utf8', (err, data) => {
+        fs.readFile(DIR_PATH + 'data.txt', 'utf8', (err, data) => {
             if (!err) {
                 cb(data.toString());
             } else {
@@ -16,15 +16,14 @@ var router = function (app) {
     }
 
     app.get("/", (req, res) => {
-        res.sendFile(DIR + '/index.html');
-        // res.status(200).send({ message: 'Welcome to my backend REST API' });
+        res.sendFile(DIR_PATH + 'index.html');
     });
 
     app.post("/api/update", (req, res) => {
         var convertedText = JSON.stringify(req.body, null, '\t');
         var socketText = JSON.stringify(req.body);
         if (convertedText) {
-            fs.writeFile(DIR + '/data.txt', convertedText, (err) => {
+            fs.writeFile(DIR_PATH + 'data.txt', convertedText, (err) => {
                 if (err) throw err;
             });
             res.status(200).send({ message: 'Update successful' });
