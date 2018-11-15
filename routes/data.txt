@@ -1,0 +1,18 @@
+[
+    {
+        "firstName": "Cassidy",
+        "username": "Josefa_Frami",
+        "email": "Hailie_Hirthe72@yahoo.com"
+    },
+    {
+        "firstName": "Melyssa",
+        "lastName": "Zboncak",
+        "email": "Rosetta.Welch39@yahoo.com"
+    },
+    {
+        "firstName": "Ofelia",
+        "lastName": "Gleason",
+        "username": "Talia63",
+        "email": "Zoie31@gmail.com"
+    }
+]
