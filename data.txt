@@ -1,9 +1,3 @@
 {
-	"firstName": "Cassidy",
-	"username": "Josefa_Frami",
-	"email": "example@email.com",
-	"object": {
-		"nums": "1243",
-		"lets": "abc"
-	}
+	"firstName": "Cassidy"
 }

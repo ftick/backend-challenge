@@ -16,7 +16,8 @@ http.listen(3000, function () {
 });
 
 io.on('connection', function(socket){
-    socket.on('update', (msg) => {
+    socket.on('good update', (msg) => {
         console.log(msg);
+        io.emit('update', msg);
     })
 });

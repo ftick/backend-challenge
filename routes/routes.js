@@ -16,7 +16,8 @@ var router = function (app) {
     }
 
     app.get("/", (req, res) => {
-        res.status(200).send({ message: 'Welcome to my backend REST API' });
+        res.sendFile(DIR + '/index.html');
+        // res.status(200).send({ message: 'Welcome to my backend REST API' });
     });
 
     app.post("/api/update", (req, res) => {
@@ -27,7 +28,7 @@ var router = function (app) {
             });
             res.status(200).send({ message: 'Update successful' });
             var socket = io.connect('http://localhost:3000');
-            socket.emit('update', req.body);
+            socket.emit('good update', text);
             console.log("/data/update 200");
         } else {
             res.status(400).send({ message: 'Data is not valid JSON' });
