@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-var appRouter = function (app) {
+var router = function (app) {
 
     function read(file, cb) {
         fs.readFile(file, 'utf8', function(err, data) {
@@ -23,7 +23,11 @@ var appRouter = function (app) {
     });
 
     app.post("/data/update", function(req, res) {
-        
+        var text = JSON.stringify(req.body, null, '\t');
+        fs.writeFile(__dirname + '/data.txt', text, function(err, data){
+            if (err) console.log(err);
+            console.log("Successfully Written to File.");
+        });
     });
 
     app.get("/data/:key", function(req, res) {
@@ -40,4 +44,4 @@ var appRouter = function (app) {
     });
 }
 
-module.exports = appRouter;
+module.exports = router;
