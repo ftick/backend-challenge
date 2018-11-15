@@ -4,7 +4,7 @@ var routes = require("./routes/routes.js");
 // var http = require('http').Server(app);
 // var io = require('socket.io')(http);
 
-app.use('/data/', bodyParser.json());
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));

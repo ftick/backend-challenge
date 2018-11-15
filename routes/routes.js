@@ -18,12 +18,6 @@ var router = function (app) {
         res.sendFile(DIR + '/index.html');
     });
 
-    app.get("/data", (req, res) => {
-        readData((data) => {
-            res.status(200).send(JSON.parse(data));
-        });
-    });
-
     app.post("/api/update", (req, res) => {
         var text = JSON.stringify(req.body, null, '\t');
         if (text) {
