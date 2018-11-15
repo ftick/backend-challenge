@@ -2,12 +2,14 @@ var fs = require('fs');
 
 var router = function (app) {
 
-    function read(file, cb) {
-        fs.readFile(file, 'utf8', function(err, data) {
+    var DIR = __dirname.split('\\').slice(0, -1).join('\\');
+
+    function read(cb) {
+        fs.readFile(DIR + '/data.txt', 'utf8', function(err, data) {
             if (!err) {
-                cb(data.toString())
+                cb(data.toString());
             } else {
-                console.log(err)
+                console.log(err);
             }
         });
     }
@@ -17,25 +19,25 @@ var router = function (app) {
     });
 
     app.get("/data", function (req, res) {
-        read(__dirname + '/data.txt', function(data) {
+        read(function(data) {
             res.status(200).send(JSON.parse(data));
         });
     });
 
     app.post("/data/update", function(req, res) {
         var text = JSON.stringify(req.body, null, '\t');
-        fs.writeFile(__dirname + '/data.txt', text, function(err, data){
+        if (text)
+        fs.writeFile(DIR + '/data.txt', text, function(err, data){
             if (err) console.log(err);
-            console.log("Successfully Written to File.");
         });
     });
 
     app.get("/data/:key", function(req, res) {
         var key = req.params.key;
-        read(__dirname + '/data.txt', function(data) {
+        read(function(data) {
             json = JSON.parse(data);
             value = json[key];
-            if (value != false) {
+            if (value != undefined) {
                 res.status(200).send(value);
             } else {
                 res.status(400).send({ message: 'key not found' });
