@@ -1,4 +1,4 @@
-# Ark Paradigm Technical Challenge
+# Technical Challenge
 Your task is to build an Express.js server that uses the socket.io library for communicating events to the client.
 
 ## Info
