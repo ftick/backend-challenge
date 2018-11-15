@@ -19,15 +19,15 @@ Your task is to build an Express.js server that uses the socket.io library for c
 - [ ] Write how-to and add to README
 - [ ] Create test suite for endpoint
 - [x] <s>Implement functionality</s>
-- [x] Implement input validation
-- [x] Implement proper error handling
+- [x] <s>Implement input validation</s>
+- [x] <s>Implement proper error handling</s>
 
 ### /data/:key
 - [ ] Write how-to and add to README
 - [ ] Create test suite for endpoint
 - [x] <s>Implement functionality</s>
-- [x] Implement input validation
-- [x] Implement proper error handling
+- [x] <s>Implement input validation</s>
+- [x] <s>Implement proper error handling</s>
 
 ### Socket.io
 - [ ] Add info about Socket server/clients to README
