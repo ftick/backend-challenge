@@ -19,8 +19,8 @@ Your task is to build an Express.js server that uses the socket.io library for c
 - [ ] Write how-to and add to README
 - [ ] Create test suite for endpoint
 - [x] <s>Implement functionality</s>
-- [ ] <s>Implement input validation</s>
-- [ ] <s>Implement proper error handling</s>
+- [ ] Implement input validation
+- [ ] Implement proper error handling
 
 ### /api/:key
 - [ ] Write how-to and add to README
