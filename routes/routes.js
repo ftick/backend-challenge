@@ -19,6 +19,12 @@ var router = function (app) {
         res.sendFile(DIR_PATH + 'index.html');
     });
 
+    app.get("/api/data", function (req, res) {
+        readDataFile(function(data) {
+           res.status(200).send(JSON.parse(data))
+       });
+   });
+
     app.post("/api/update", (req, res) => {
         var text = JSON.stringify(req.body, null, '  ');
         if (text) {
@@ -45,7 +51,7 @@ var router = function (app) {
                 res.status(400).send({ message: key + ' is not a valid key' });
                 console.log("/data/find 400");
             } else {
-                res.status(200).send(value);
+                res.status(200).send({value: value});
                 console.log("/data/find 200");
             }
         });
