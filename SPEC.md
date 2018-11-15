@@ -1,4 +1,4 @@
-# Ark Paradigm Technical Challenge
+# Technical Challenge
 Your task is to build an Express.js server that uses the socket.io library for communicating events to the client.
 
 ## Endpoints
@@ -37,6 +37,3 @@ Your task is to build an Express.js server that uses the socket.io library for c
 - Documentation (10%)
 - Unit Test Coverage (10%)
 - Bonus Points (up to +10%)
-
-### Submissions
-Once you finish please upload your project to github and send the link via email to murraylove@arkparadigm.com as well as umarkhan@arkparadigm.com
