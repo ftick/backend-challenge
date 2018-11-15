@@ -11,10 +11,12 @@ app.use(bodyParser.urlencoded({
 
 routes(app);
 
-io.on('connection', function(socket){
-    console.log("a user connected");
-});
-
 http.listen(3000, function () {
     console.log("Server running at http://localhost:3000");
+});
+
+io.on('connection', function(socket){
+    socket.on('update', (msg) => {
+        console.log(msg);
+    })
 });
