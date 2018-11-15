@@ -21,14 +21,15 @@ var router = function (app) {
     });
 
     app.post("/api/update", (req, res) => {
-        var text = JSON.stringify(req.body, null, '\t');
-        if (text) {
-            fs.writeFile(DIR + '/data.txt', text, (err) => {
+        var convertedText = JSON.stringify(req.body, null, '\t');
+        var socketText = JSON.stringify(req.body);
+        if (convertedText) {
+            fs.writeFile(DIR + '/data.txt', convertedText, (err) => {
                 if (err) throw err;
             });
             res.status(200).send({ message: 'Update successful' });
             var socket = io.connect('http://localhost:3000');
-            socket.emit('good update', text);
+            socket.emit('good update', socketText);
             console.log("/data/update 200");
         } else {
             res.status(400).send({ message: 'Data is not valid JSON' });
