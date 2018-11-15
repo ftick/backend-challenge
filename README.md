@@ -15,21 +15,21 @@ Your task is to build an Express.js server that uses the socket.io library for c
 
 ## TODO
 
-### /data/update POST endpoint
+### /data/update
 - [ ] Write how-to and add to README
 - [ ] Create test suite for endpoint
 - [x] <s>Implement functionality</s>
 - [ ] Implement input validation
 - [ ] Implement proper error handling
 
-### /data/:key GET endpoint
+### /data/:key
 - [ ] Write how-to and add to README
 - [ ] Create test suite for endpoint
 - [x] <s>Implement functionality</s>
 - [ ] Implement input validation
 - [ ] Implement proper error handling
 
-### Socket.io stuff
+### Socket.io
 - [ ] Add info about Socket server/clients to README
 - [ ] Create test suite for Socket server
 - [ ] Create test suite for Socket clients
