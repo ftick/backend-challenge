@@ -1,9 +1,9 @@
 {
 	"firstName": "Cassidy",
 	"username": "Josefa_Frami",
-	"email": "Hailie_Hirthe72@yahoo.com",
+	"email": "example@email.com",
 	"object": {
-		"ab": "1243",
-		"cd": "wqerq"
+		"nums": "1243",
+		"lets": "hfg"
 	}
 }

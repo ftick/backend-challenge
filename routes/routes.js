@@ -25,25 +25,30 @@ var router = function (app) {
     });
 
     app.post("/data/update", (req, res) => {
-        if(!req.body) return res.status(400).send({ message: 'Data is not valid JSON' });
         var text = JSON.stringify(req.body, null, '\t');
         if (text) {
             fs.writeFile(DIR + '/data.txt', text, (err) => {
                 if (err) throw err;
-                else return res.status(200).send({ message: 'Update successful'});
             });
+            res.status(200).send({ message: 'Update successful' });
+            console.log("/data/update 200")
+        } else {
+            res.status(400).send({ message: 'Data is not valid JSON' });
+            console.log("/data/update 400")
         }
     });
 
-    app.get("/data/:key", (req, res) => {
+    app.get("/data/find/:key", (req, res) => {
         var key = req.params.key;
         readData((data) => {
             json = JSON.parse(data);
             value = json[key];
             if (value != undefined) {
                 res.status(200).send(value);
+                console.log("/data/find 200")
             } else {
                 res.status(400).send({ message: key + ' is not a valid key' });
+                console.log("/data/find 400")
             }
         });
     });
